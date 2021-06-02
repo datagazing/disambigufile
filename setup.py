@@ -29,11 +29,6 @@ setup(
         'Programming Language :: Python :: 3.8',
     ],
     description="Class with file-like interface to a file found in provided search path",
-    entry_points={
-        'console_scripts': [
-            'disambigufile=disambigufile.cli:main',
-        ],
-    },
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
