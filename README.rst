@@ -25,8 +25,8 @@ Class with file-like interface to a file found in provided search path
 Features
 --------
 
-- Search a path for a file that matches a pattern
-- Search a path for a file inside directories that match a pattern
+* Search a path for a file that matches a pattern
+* Search a path for a file inside directories that match a pattern
 
 Examples
 --------
