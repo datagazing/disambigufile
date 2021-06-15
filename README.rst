@@ -27,7 +27,7 @@ Features
 
 * Search a path for a file that matches a pattern
 * Search a path for a file inside directories that match a pattern
-* Basic file interface (DisFile(...).open(), with DisFile(...) as f: ...)
+* Basic file interface (`DisFile(...).open()`, `with DisFile(...) as f: ...`)
 * Get path from config file (if optini module installed)
 
 Examples
