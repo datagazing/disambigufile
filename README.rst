@@ -4,7 +4,7 @@ disambigufile
 
 
 .. image:: https://img.shields.io/pypi/v/disambigufile.svg
-        :target: https://pypi.python.org/pypi/disambigufile
+        :target: https://pypi.org/project/disambigufile
 
 .. image:: https://img.shields.io/travis/datagazing/disambigufile.svg
         :target: https://travis-ci.com/datagazing/disambigufile
