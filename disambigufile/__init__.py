@@ -4,5 +4,5 @@ __author__ = """Brendan Strejcek"""
 __email__ = 'brendan@datagazing.com'
 __version__ = '0.1.0'
 
-from .disambigufile import Disambigufile 
+from .disambigufile import DisFile, Error, NoMatchError, AmbiguousMatchError
 
