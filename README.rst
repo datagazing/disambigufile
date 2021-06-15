@@ -27,38 +27,63 @@ Features
 
 * Search a path for a file that matches a pattern
 * Search a path for a file inside directories that match a pattern
+* Basic file interface (DisFile(...).open(), with DisFile(...) as f: ...)
+* Get path from config file (if optini module installed)
 
 Examples
 --------
 
+Simple usage:
+
 .. code-block:: python
 
-  from disambigufile import Disambigufile
-  import disambigufile.exceptions
+  from disambigufile import DisFile
   path = '/bin:/usr/bin:/usr/local/bin'
   try:
-      print(Disambigufile('^ls', path=path))
-  except disambigufile.exceptions.Error as e:
+      print(DisFile('^ls', path=path))
+  except Exception as e:
       print(f"unable to disambiguate file; exception: {e}")
 
+Using a `with` statement to open the disambiguated file:
+
+.. code-block:: python
+
+  from disambigufile import DisFile
   path = 'path1:path2'
   try:
-      with Disambigufile(r'^asdf', path=path).open() as f:
+      with DisFile(r'^asdf', path=path) as f:
           print(f.read())
-  except disambigufile.exceptions.Error as e:
+  except Exception as e:
       print(f"unable to disambiguate file; exception: {e}")
 
+With more specific exception handling:
+
+.. code-block:: python
+
+  from disambigufile import DisFile
+  import disambigufile
+  path = '/bin:/usr/bin:/usr/local/bin'
+  try:
+      print(DisFile('^ls', path=path))
+  except disambigufile.Error as e:
+      # will only catch module-specific exceptions
+      print(f"unable to disambiguate file; exception: {e}")
+
+Match a file inside of a matched directory:
+
+.. code-block:: python
+
+  from disambigufile import DisFile
   # search for unique file matching ~/Datasets/*2019-08-19*/data*
   path='~/Datasets'
   try:
-      hit = Disambigufile(
+      hit = DisFile(
           pattern='2019-08-19',
           path=path,
-          dir=True,
           subpattern='^data',
       )
       print(hit)
-  except disambigufile.exceptions.Error as e:
+  except disambigufile.Error as e:
       print(f"unable to disambiguate file; exception: {e}")
 
 Credits
