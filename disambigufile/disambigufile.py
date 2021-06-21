@@ -1,6 +1,12 @@
 """
 Class with file-like interface to a file found in provided search path
 
+See top level package docstring for documentation
+"""
+
+"""
+Class with file-like interface to a file found in provided search path
+
 Examples
 --------
 

@@ -73,8 +73,9 @@ docs: ## generate Sphinx HTML documentation, including API docs
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
-#release: dist ## package and upload a release
-#	twine upload dist/*
+README.rst: README.rst.fstr disambigufile/__init__.py
+	gleandoc README.rst.fstr README.rst
+
 release: dist ## package and upload a release
 	flit publish
 
@@ -82,4 +83,4 @@ dist: clean ## builds source and wheel package
 	flit build
 
 install: clean ## install the package to the active Python's site-packages
-	python3 setup.py install
+	pip setup.py install

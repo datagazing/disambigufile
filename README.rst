@@ -4,7 +4,7 @@ disambigufile
 
 
 .. image:: https://img.shields.io/pypi/v/disambigufile.svg
-        :target: https://pypi.org/project/disambigufile
+        :target: https://pypi.python.org/pypi/disambigufile
 
 .. image:: https://img.shields.io/travis/datagazing/disambigufile.svg
         :target: https://travis-ci.com/datagazing/disambigufile
@@ -15,12 +15,7 @@ disambigufile
 
 
 
-
 Class with file-like interface to a file found in provided search path
-
-
-* Free software: MIT license
-* Documentation: https://disambigufile.readthedocs.io.
 
 Features
 --------
@@ -87,6 +82,18 @@ Match a file inside of a matched directory:
       print(hit)
   except disambigufile.Error as e:
       print(f"unable to disambiguate file; exception: {e}")
+
+License
+-------
+
+* Free software: MIT license
+
+Documentation
+-------------
+
+* https://disambigufile.readthedocs.io/
+
+
 
 Credits
 -------
