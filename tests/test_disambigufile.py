@@ -10,6 +10,7 @@ import unittest
 from disambigufile import DisFile
 import disambigufile
 
+
 class TestDisambigufile(unittest.TestCase):
     """Tests for `disambigufile` package."""
 
@@ -49,18 +50,18 @@ class TestDisambigufile(unittest.TestCase):
         """Test miss (ambiguous)"""
         path = 'sandbox/dir1:sandbox/dir2'
         try:
-            found = DisFile('find', path=path).hit()
+            DisFile('find', path=path).hit()
             assert False
-        except disambigufile.AmbiguousMatchError as e:
+        except disambigufile.AmbiguousMatchError:
             assert True
 
     def test_miss_no_match(self):
         """Test miss (no match)"""
         path = 'sandbox/dir1:sandbox/dir2'
         try:
-            found = DisFile('46a52c91eec8b604', path=path).hit()
+            DisFile('46a52c91eec8b604', path=path).hit()
             assert False
-        except disambigufile.NoMatchError as e:
+        except disambigufile.NoMatchError:
             assert True
 
     def test_subpattern(self):
@@ -74,9 +75,3 @@ class TestDisambigufile(unittest.TestCase):
         except Exception as e:
             print(f"exception: {e}")
             assert False
-
-    #def test_config_file(self):
-    #    """Test miss (no match)"""
-
-    #def test_file_open(self):
-    #    """Test miss (no match)"""
