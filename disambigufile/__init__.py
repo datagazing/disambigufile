@@ -81,7 +81,7 @@ Documentation
 
 __author__ = """Brendan Strejcek"""
 __email__ = 'brendan@datagazing.com'
-__version__ = '0.3.1'
+__version__ = '0.3.2'
 
 from .disambigufile import DisFile # noqa F401
 from .disambigufile import Error # noqa F401
