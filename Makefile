@@ -82,5 +82,5 @@ release: dist ## package and upload a release
 dist: clean ## builds source and wheel package
 	flit build
 
-install: clean ## install the package to the active Python's site-packages
+install: clean dist ## install the package to the active Python's site-packages
 	pip install dist/*.tar.gz
